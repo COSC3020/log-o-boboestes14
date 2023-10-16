@@ -12,3 +12,33 @@ page](https://docs.github.com/en/get-started/writing-on-github/working-with-adva
 might help with the notation for mathematical expressions.
 
 $T(n) \in O(f(n)) \iff \exists c, n_0: T(n) \leq c \cdot f(n) \forall n \geq n_0$
+
+To start off we can f(n) with $ (\log_{2} n) $ and $ (\log_{5} n) $ to get the two equations
+
+$1.) T(n) \in O(f(n)) \iff \exists c, n_0: T(n) \leq c \cdot (\log_{2} n) \forall n \geq n_0$
+
+$2.) T(n) \in O(f(n)) \iff \exists c, n_0: T(n) \leq c \cdot (\log_{5} n) \forall n \geq n_0$
+
+Now we have to use a logarithm rule that states $ \log_{b} a = \frac{\log_{n} a}{\log_{n} b} $
+
+Using this we can change the equations above to look like this
+
+$1.) T(n) \leq c \cdot (\frac{1}{\log_{5} 2})(\log_{5} n)$
+
+$2.) T(n) \leq c \cdot (\frac{1}{\log_{2} 5})(\log_{2} n)$
+
+Now we can just say that c times $ \frac{1}{\log_{5} 2} $ is a new constant d, 
+and that c times $ \frac{1}{\log_{2} 5} $ is a new constant d as well, since the constants in both
+can be whatever and not effect eachother. 
+
+$1.) T(n) \leq d \cdot (\log_{5} n)$
+
+$2.) T(n) \leq d \cdot (\log_{2} n)$
+
+This leads to the equations becoming the same as the other one. Meaning that 
+
+$1.) T(n) \in O(\log_{5} n)$
+
+$2.) T(n) \in O(\log_{3} n)$
+
+Therefore logarithms with different bases don't affect the asymptotic complexity of an algorithm.
